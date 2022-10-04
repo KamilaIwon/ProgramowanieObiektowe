@@ -113,6 +113,43 @@ lista7 = []
 def func7(lista):
     for x in lista:
         liczba = input()
+
+
+
+#zad9a
+
+lista9_a = [1,2,3,4,5]
+
+def func9_a (lista):
+    temp = lista[0]
+    lista[0] = lista[-1]
+    lista[-1]=temp
+    return lista
+
+print('zadanie 9a:',func9_a(lista9_a))
+
+#zad9b
+lista9_b = [1,2,3,4,5]
+
+def func9_b (lista):
+    temp = lista[-1]
+    for x in range(0,len(lista)):
+        if x == len(lista)-1:
+            lista[x] = temp
+        else:
+            lista[x] = lista[x+1]
+    return lista
+
+print('zadanie 9b:',func9_b(lista9_b))
+
+#zad9c
+lista9_c = [1,2,3,4,5]
+def func9_c (lista):
+    for x in range(0,len(lista)):
+        if lista[x]%2==0:
+            lista[x] = 0
+    return lista
+print('zadanie 9c:',func9_c(lista9_c))
 #zad10
 a = [1,2,3]
 b = [4,5,6]
