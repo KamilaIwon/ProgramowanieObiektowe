@@ -108,14 +108,34 @@ def func(lista):
 print('zadanie6:',func(lista6))
 
 #zad7
-lista7 = []
-
-def func7(lista):
-    for x in lista:
-        liczba = input()
 
 
+def func7():
+    wynik = []
+    ilosc = 0
+    while ilosc < 11:
+        x = input(f"podaj liczbe, podano ({ilosc} z 10\n>")
+        if x.lstrip("-").isdigit():
+            wynik.append(x)
+            ilosc +=1
+        else:
+            print('zle')
+    print(f"wpisane numery to: {wynik}")
 
+#print('zadanie7:',func7())
+
+#zadanie 8
+def func8():
+    lista8 = []
+    for x in range(2,10001):
+        lista8.append(x)
+    for x in range (2,101):
+        for y in lista8:
+            if y % x == 0 and y != x:
+                lista8.remove(y)
+    print(f"zadanie 8: {lista8}")
+
+print(func8())
 #zad9a
 
 lista9_a = [1,2,3,4,5]
