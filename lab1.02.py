@@ -76,10 +76,66 @@ def func1_d(znak):
     return znak1
 
 
-lancuch = input("wprowadz dowolny łańcuch znaków: ")
+# lancuch = input("wprowadz dowolny łańcuch znaków: ")
 lancuch1 = open('tekst.txt')
-print('zadanie 1a: ', func1_a(lancuch))
-print('zadanie 1b: ', func1_b(lancuch))
+# print('zadanie 1a: ', func1_a(lancuch))
+# print('zadanie 1b: ', func1_b(lancuch))
 print('zadanie 1c: ', func1_c(lancuch1.read()))
 lancuch1 = open('tekst.txt')
 print('zadanie 1d: ', func1_d(lancuch1.read()))
+
+# ex.2
+
+
+def czypowtorzenia(key, lista):
+    ile = 0
+    for x in lista:
+        if x == key:
+            ile += 1
+    return ile
+
+
+'''
+data = input("Enter a number or press enter to quit: ")
+slownik = {}
+ile = 1
+lista = []
+while data:
+    if not data.isdigit():
+        print("It is not a correct number, try again")
+    else:
+        lista.append(data)
+        slownik[data] = czypowtorzenia(data, lista)
+
+    data = input("Enter a number or press enter to quit: ")
+
+print(slownik)
+
+'''
+
+# ex. 3
+
+tekst = open("tekst.txt")
+data = tekst.read()
+slownik = {}
+lista = []
+for i in range(0, len(data)):
+    if data[i].isalpha():
+        lista.append(data[i])
+        slownik[data[i]] = czypowtorzenia(data[i], lista)
+print(slownik)
+
+# ex. 4
+
+tekst = open("tekst.txt")
+data = tekst.read()
+data = data.split()
+slownik = {}
+lista = []
+for x in data:
+    if x.isdigit():
+        lista.append(x)
+        slownik[x] = czypowtorzenia(x, lista)
+print(data)
+print(lista)
+print(slownik)
