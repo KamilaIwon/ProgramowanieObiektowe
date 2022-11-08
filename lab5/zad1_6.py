@@ -1,17 +1,13 @@
+def student_data(student_id, **kwargs):
+    print(f'\nStudent ID: {student_id}')
+    if 'student_name' in kwargs:
+        print(f"Student Name:  {kwargs['student_name']}")
 
-class Student:
-    def __init__(self, nazwa_ucznia, klasa_ucznia, student_id):
-        self.nazwa_ucznia = nazwa_ucznia
-        self.klasa_ucznia = klasa_ucznia
-        self.student_id = student_id
+    if 'student_class' in kwargs:
+        print(f"\nStudent Name:  {kwargs['student_name']}")
+        print(f"Student Class:  {kwargs['student_class']}")
 
-    def student_data(self,*dodatek):
-        print(self.student_id)
-        if 'nazwa_ucznia' in dodatek:
-            print(self.nazwa_ucznia)
-        if 'klasa_ucznia' in dodatek:
-            print(self.klasa_ucznia)
 
-numer1 = Student('Kamila','3c',12345)
-numer1.student_data()
-numer1.student_data('klasa_ucznia')
+student_data(student_id='12345', student_name='Kamila')
+
+student_data(student_id='123456', student_name='Kamila', student_class='3c')
