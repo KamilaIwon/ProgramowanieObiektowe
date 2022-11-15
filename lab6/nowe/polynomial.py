@@ -23,11 +23,23 @@ class Polynomial:
 
     def __add__(self, other):
         list = []
-        for i in self.coefficients:
-            for j in other.coefficients:
-                list.append(i+j)
-        return list
+        if len(self.coefficients) < len(other.coefficients):
+            dlugosc = len(other.coefficients)
+        else:
+            dlugosc = len(self.coefficients)
 
+        for x in range(0,dlugosc):
+            if len(self.coefficients)-1 < x:
+                list.append(other.coefficients[x])
+            elif len(other.coefficients)-1 < x:
+                list.append(self.coefficients[x])
+            else:
+                list.append(self.coefficients[x]+other.coefficients[x])
+
+        return Polynomial(list)
+
+    def __sub__(self, other):
+        return self + (-other)
 
     def __mul__(self, other):
         W1 = self.coefficients[::-1]
@@ -41,7 +53,12 @@ class Polynomial:
             for j in range(0, len(W2)):
                 W3[i + j] = W3[i + j] + W1[i] * W2[j]
 
-        return Polynomial(W3)
+        return Polynomial(W3[::-1])
+
+    def __eq__(self, other):
+        if self.coefficients == other.coefficients:
+            return True
+        return False
 
     def __call__(self, x):
         i = len(self.coefficients)

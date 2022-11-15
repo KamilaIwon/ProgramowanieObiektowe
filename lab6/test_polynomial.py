@@ -12,3 +12,5 @@ print(pierwszy.coefficients)
 print(pierwszy.__call__(2))
 pol3 = Polynomial([5,10,15])
 print(pol3.__call__(3))
+
+print(pierwszy)
