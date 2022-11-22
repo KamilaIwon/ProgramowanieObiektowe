@@ -17,7 +17,7 @@ revision = '3'
 ######################################################
 import datetime
 import urllib
-import urllib2
+import urllib
 import os
 import sys
 import string
@@ -54,7 +54,7 @@ songNum = 1
 kill = False
 ######################################################
 #                                                    ############
-print "Starting Python Music Player " + version + "." + revision #
+print("Starting Python Music Player " + version + "." + revision) #
 #                                                    ############
 ######################################################
 def mkdir(directory):
@@ -94,7 +94,7 @@ def shutdown():
 def log(string):
     try:
         if debug:
-            print "[Debug]: " + string
+            print("[Debug]: " + string)
 	log_file.write("[Logger]: ")
         log_file.write(string)
         log_file.write("\n")
@@ -115,9 +115,9 @@ def LogErr():
 def bcast(string, err=False):
     try:
         if err:
-            print string
+            print(string)
         else:
-            print "[Player]: " + string
+            print("[Player]: " + string)
         #conn.send(string)
         text = string
         #display(string, background, screen)
@@ -182,7 +182,7 @@ def server():
             s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             s.bind((HOST, PORT))
         except socket.error as msg:
-            print 'Bind failed. Error Code : ' + str(msg[0]) + ' Message ' + msg[1]
+            print('Bind failed. Error Code : ' + str(msg[0]) + ' Message ' + msg[1])
             LogErr()
             try:
                 s.close()
@@ -190,16 +190,16 @@ def server():
                 LogErr()
                 pass
         s.listen(2)
-        print 'Started control server on ' + HOST + ':' + str(PORT)
+        print('Started control server on ' + HOST + ':' + str(PORT))
     except:
-        print "Couldn't create control server"
+        print("Couldn't create control server")
         LogErr()
 ######################################################
 # Get news updates
 def news():
     log("Getting news")
     try:
-        news = urllib2.urlopen("http://" + url + "/news.txt")
+        news = urllib.urlopen("http://" + url + "/news.txt")
         news = news.read()
         if news == '':
             bcast("No News")
@@ -239,11 +239,11 @@ def control():
         elif option == '':
             option = ''
         elif option == 'debug':
-            if debug == True:
-                print "Debug mode disabled"
+            if debug is True:
+                print("Debug mode disabled")
                 debug = False
-            elif debug == False:
-                print "Debug mode enabled"
+            elif debug is False:
+                print("Debug mode enabled")
                 debug = True
         elif option == "news":
             news()
@@ -259,17 +259,17 @@ def control2():
         for event in pygame.event.get():
             if event.type == pygame.KEYDOWN:
                 if event == pygame.K_d:
-                    print "Debug"
+                    print("Debug")
                     if debug:
                         debug = False
                     else:
                         debug = True
                 if event.key == pygame.K_SPACE or event.key == pygame.K_F11:
                     bcast("Pause")
-                    if pause == True:
+                    if pause is True:
                         pygame.mixer.music.play()
                         pause = False
-                    elif pause == False:
+                    elif pause is False:
                         pygame.mixer.music.pause()
                         pause = True
                 if event.key == pygame.K_u:
@@ -327,7 +327,7 @@ try:
 except ImportError:
     LogErr()
     try:
-        print "Downloading assets"
+        print("Downloading assets")
         log('Pygame missing; getting installer')
         osv = sys.platform
         if osv == 'win32':
@@ -336,11 +336,11 @@ except ImportError:
             urllib.urlretrieve('https://pygame.org/ftp/pygame-1.9.1release-python.org-32bit-py2.7-macosx10.3.dmg', 'pygame-mac.dmg')
             log('Success!')
         elif osv == 'linux2' or 'cygwin':
-            print 'You are using linux or cygwin'
-            print "Use the command 'sudo pip install pygame' to download\nthe nessasary modules"
-            log(osv + ' detected; pip installer recommended')
+            print('You are using linux or cygwin')
+            print("Use the command 'sudo pip install pygame' to download\nthe nessasary modules"
+            log(osv + ' detected; pip installer recommended'))
         else:
-            print 'Unrecognized os: ' + osv
+            print('Unrecognized os: ' + osv)
         try:
             urllib.urlretrieve('http://' + url + '/pygame.tar.gz', 'pygame.tar.gz')
             tar = tarfile.open("pygame.tar.gz")
@@ -349,12 +349,12 @@ except ImportError:
             os.remove('pygame.tar.gz')
         except:
             LogErr()
-            print "Failed to get assets"
+            print("Failed to get assets")
             exit()
-        print 'Please run the installer that has been dropped into the ' + os.path.dirname(os.getcwd()) + ' folder'
+        print('Please run the installer that has been dropped into the ' + os.path.dirname(os.getcwd()) + ' folder')
     except:
-        print 'Failed to get assets'
-        print "Please install the 'pygame' module manually at pygame.org"
+        print('Failed to get assets')
+        print("Please install the 'pygame' module manually at pygame.org")
         LogErr()
         shutdown()
     exit()
@@ -383,25 +383,25 @@ try:
                 pygame.init()
                 try:
                     pygame.mixer.music.load(sys.argv[i+1])
-                    print "Now Playing: " + sys.argv[i+1]
+                    print("Now Playing: " + sys.argv[i+1])
                     pygame.mixer.music.play()
                     while pygame.mixer.music.get_busy():
                         continue
                     kill = True
                 except:
                     LogErr()
-                    print "There was an error playing the file"
+                    print("There was an error playing the file")
                     kill = True
 	    elif arg == "-h" or arg == "--help":
-		print 'Plays music in the "Music" folder within the current directory\n'
-		print "Usage: " + sys.argv[0] + " [-hvc] [-f <filepath>]"
-		print "Options: "
-		print "\t -h, --help\t Displays this help text"
-		print "\t -v, --verbose\t Displays extra information"
-		print "\t -c, --console\t Disables Pygame screen (text-only mode)"
-		print "\t -f, --file\t Plays the file at the filepath specified"
-		print "\nExamples: \n\t " + sys.argv[0] + " -v -c -f /sample/file/path/foo.bar"
-		print "\t " + sys.argv[0] + " -f foo.bar"
+		print('Plays music in the "Music" folder within the current directory\n')
+		print("Usage: " + sys.argv[0] + " [-hvc] [-f <filepath>]")
+		print("Options: ")
+		print("\t -h, --help\t Displays this help text")
+		print("\t -v, --verbose\t Displays extra information")
+		print("\t -c, --console\t Disables Pygame screen (text-only mode)")
+		print("\t -f, --file\t Plays the file at the filepath specified")
+		print("\nExamples: \n\t " + sys.argv[0] + " -v -c -f /sample/file/path/foo.bar")
+		print("\t " + sys.argv[0] + " -f foo.bar")
                 kill = True
             i = i + 1
 except:
@@ -415,8 +415,8 @@ update = 0
 try:
     log('Checking for updates...')
     log('Getting info from ' + url)
-    ver = urllib2.urlopen('http://' + url + '/version.txt')
-    rev = urllib2.urlopen('http://' + url + '/rev.txt')
+    ver = urllib.urlopen('http://' + url + '/version.txt')
+    rev = urllib.urlopen('http://' + url + '/rev.txt')
     ver = ver.read()
     rev = rev.read()
     if float(ver) > float(version):
@@ -445,7 +445,7 @@ log("Player starting...")
 news()
 ######################################################
 try:
-    if console == False:
+    if console is False:
         screen = pygame.display.set_mode((1000, 200))
         pygame.display.set_caption("Music Player")
         background = pygame.Surface(screen.get_size())

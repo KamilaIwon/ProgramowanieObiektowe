@@ -1,7 +1,10 @@
-def process_offers(offer, counter_general, counter, counter_update, counter_switched_back):
+from calendar import c
+
+
+def process_offers(offer, counter_general, counter, counter_update, counter_switched_back, lock2=None):
     def insert_record_to_offers_ml(id, offer_name, platform, tracking_link, geo, app_category, creative_link, icon_link,
-                                app_desc,
-                                percent_payout, payout_type, preview_link, daily_cap, status):
+                                   app_desc,
+                                   percent_payout, payout_type, preview_link, daily_cap, status, conn=None):
         c.execute(
             'INSERT OR REPLACE INTO offers (id, offer_name, platform, tracking_link, geo, app_category, creative_link, icon_link, app_desc, percent_payout, payout_type, preview_link, daily_cap, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
             (id, offer_name, platform, tracking_link, geo, app_category, creative_link, icon_link, app_desc,
@@ -18,7 +21,7 @@ def process_offers(offer, counter_general, counter, counter_update, counter_swit
         except sqlite3.ProgrammingError:
             ipdb.set_trace()
 
-    def update_status_in_offers_ml(field, value, id):
+    def update_status_in_offers_ml(field, value, id, conn=None):
         c.execute(
             "UPDATE offers SET " + field + " = ? WHERE id = ?", (value, id))
         # "UPDATE offers SET " + field + " = ? WHERE id = ?", (value, id))
@@ -61,7 +64,7 @@ def process_offers(offer, counter_general, counter, counter_update, counter_swit
                 offer['country'] = offer['geo']
 
                 if success is None:
-                    print "Добавляем " + offer['name'].encode('utf-8') + " " + offer['country'].encode('utf-8')
+                    print("Добавляем " + offer['name'].encode('utf-8') + " " + offer['country'].encode('utf-8'))
                     with lock2:
                         insert_record_to_offers_ml(offer['externalOfferId'], offer['name'], offer['app_os'],
                                             offer['shortenURL'], offer['country'],
@@ -72,32 +75,32 @@ def process_offers(offer, counter_general, counter, counter_update, counter_swit
                                             offer['daily_capping'], "active")
                     counter += 1
                 else:
-                    print "Изменяем " + str(offer['externalOfferId']) + " " + offer['name'].encode(
-                        'utf-8') + " " + offer['country'].encode('utf-8')
+                    print("Изменяем " + str(offer['externalOfferId']) + " " + offer['name'].encode(
+                        'utf-8') + " " + offer['country'].encode('utf-8'))
                     if success[3] != offer['shortenURL']:
-                        print "Обновлено старое значение tracking link ", str(success[3]), " на новое ", str(
-                            offer['shortenURL'])
+                        print("Обновлено старое значение tracking link ", str(success[3]), " на новое ", str(
+                            offer['shortenURL']))
                         with lock2:
                             update_record_in_offers_ml("tracking_link", offer['shortenURL'], str(success[0]))
                         counter_update += 1
                     if str(success[9]) != str(offer['bid']):
-                        print "Обновлено старое значение payout ", str(success[9]), " на новое ", str(
-                            offer['bid'])
+                        print("Обновлено старое значение payout ", str(success[9]), " на новое ", str(
+                            offer['bid']))
                         with lock2:
                             update_record_in_offers_ml("percent_payout", offer['bid'], str(success[0]))
                         counter_update += 1
                     if str(success[12]) != str(offer['daily_capping']):
-                        print "Обновлено старое значение remaining cap ", str(success[12]), " на новое ", str(
-                            offer['daily_capping'])
+                        print("Обновлено старое значение remaining cap ", str(success[12]), " на новое ", str(
+                            offer['daily_capping']))
                         with lock2:
                             update_record_in_offers_ml("daily_cap", offer['daily_capping'], str(success[0]))
                         counter_update += 1
                     if success[13] != "active":
-                        print "Обновлено значение статуса с ", str(success[13]), " на ", "active"
+                        print("Обновлено значение статуса с ", str(success[13]), " на ", "active")
                         with lock2:
                             update_status_in_offers_ml("status", "active", str(success[0]))
                         counter_switched_back += 1
         else:
-            print "Offer has no bid and no externalOfferId: ", offer
+            print("Offer has no bid and no externalOfferId: ", offer)
     except TypeError:
         return

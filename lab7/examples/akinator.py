@@ -44,7 +44,7 @@ class Akinator():
         return s in ['no', 'n', 'нет', 'ноу', '-', '0', 'false']
 
     def query(self, id="", state=0, answer="+"):
-        if not id in self.states:
+        if id not in self.states:
             return 0
         if (state == 0) and (answer == "+"):
             return 1
