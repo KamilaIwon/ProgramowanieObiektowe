@@ -232,7 +232,7 @@ public class Main
         return powInt(2, k) < a && a < factorial(k);
     }
 
-    // tylko dla pozytywnych poteng
+    // tylko dla pozytywnych potęg
     static float powInt(float n, int p)
     {
         float result = n;
