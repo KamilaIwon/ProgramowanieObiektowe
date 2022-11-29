@@ -16,8 +16,54 @@ public class Main
             System.out.printf("Podaj a%d:%n", i);
             numbers[i] = scanner.nextFloat();
         }
-
+        /*
+        System.out.print("\nzad1a: ");
         zad_a(n, numbers);
+        System.out.print("\nzad1b: ");
+        zad_b(n, numbers);
+        System.out.print("\nzad1c: ");
+        zad_c(n, numbers);
+        System.out.print("\nzad1d: ");
+        zad_d(n, numbers);
+        System.out.print("\nzad1e: ");
+        zad_e(n, numbers);
+        System.out.print("\nzad1f: ");
+        zad_f(n, numbers);
+        System.out.print("\nzad1g: ");
+        zad_g(n, numbers);
+        System.out.print("\nzad1h: ");
+        zad_h(n, numbers);
+        System.out.print("\nzad1i: ");
+        zad_i(n, numbers);
+        System.out.print("\nzad1j: ");
+        zad_j(n, numbers);
+
+        System.out.print("\n\nzad2a: ");
+        zad_a2(n, numbers);
+        System.out.print("\nzad2b: ");
+        zad_b2(n, numbers);
+        System.out.print("\nzad2c: ");
+        zad_c2(n, numbers);
+        System.out.print("\nzad2d: ");
+        zad_d2(n, numbers);
+        System.out.print("\nzad2e: ");
+        zad_e2(n, numbers);
+        System.out.print("\nzad2f: ");
+        zad_f2(n, numbers);
+        System.out.print("\nzad2g: ");
+        zad_g2(n, numbers);
+        System.out.print("\nzad2h: ");
+        zad_h2(n, numbers);
+        */
+
+        System.out.print("\nzad2: ");
+        zad_22(n, numbers);
+        System.out.print("\nzad3: ");
+        zad_23(n, numbers);
+        System.out.print("\nzad4: ");
+        zad_24(n, numbers);
+        System.out.print("\nzad5: ");
+        zad_25(n, numbers);
     }
 
     static void zad_a(int n, float[] numbers)
@@ -123,7 +169,7 @@ public class Main
     static void zad_i(int n, float[] numbers)
     {
         float result = 0;
-        float sign = 1;
+        float sign = -1;
 
         for (int i = 0; i < n; ++i)
         {
@@ -263,7 +309,7 @@ public class Main
 
         for (int i = 0; i < n; ++i)
         {
-            if (numbers[i] % 2 == 1 && numbers[i] < 0) ++result;
+            if (numbers[i] % 2 != 0 && numbers[i] >= 0) ++result;
         }
 
         System.out.printf("Result: %d", result);
