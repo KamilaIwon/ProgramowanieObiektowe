@@ -15,6 +15,6 @@ public class nowy {
             System.out.printf("Podaj a%d:%n", i);
             numbers[i] = scanner.nextFloat();
         }
-        
+
     }
 }
