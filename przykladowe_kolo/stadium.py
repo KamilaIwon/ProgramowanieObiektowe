@@ -55,8 +55,8 @@ class Stadium(Court):
     def __ne__(self, __o: Court) -> bool:
         return self.area() != __o.area() and self.capacity != __o.capacity
 
-    def __str__(self) -> str:
+    def __repr__(self) -> str:
         ret = f"Boisko wybudowane w {self.year_built}, o długości {self.length} i szerokości {self.width} metrów.\nPole powierzchni: {self.area()} mkw.\nAdres: {self.address}.\nNazwa: {self.name}.\n"
-        if self.common_name:
+        if self.common_name > 0:
             ret += f"Nazwa zwyczajowa: {self.common_name}\n"
         return ret + f"Pojemność stadionu {self.capacity}.\n"

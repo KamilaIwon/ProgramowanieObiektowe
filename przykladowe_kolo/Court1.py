@@ -1,3 +1,5 @@
+from datetime import date
+
 
 class Court:
     __width: float
@@ -19,12 +21,6 @@ class Court:
         self.__address = address
         self.__year_built = year_built
 
-    def __str__(self) -> str:
-        return f'width: {self.__width}\n' \
-               f'length: {self.__length}\n' \
-               f'address: {self.__address}\n' \
-               f'year built: {self.__year_built}'
-
     @property
     def width(self) -> float:
         return self.__width
@@ -33,11 +29,51 @@ class Court:
     def width(self, value: float) -> None:
         self.__width = value
 
+    @property
+    def length(self) -> float:
+        return self.__length
+
+    @length.setter
+    def length(self, value: float) -> None:
+        self.__length = value
+
+    @property
+    def address(self) -> str:
+        return self.__address
+
+    @address.setter
+    def address(self, value: str) -> None:
+        self.__address = value
+
+    @property
+    def year_built(self) -> int:
+        return self.__year_built
+
+    @year_built.setter
+    def year_built(self, value: int) -> None:
+        self.__year_built = value
+
     def area(self) -> float:
-        return self.__width * self.__length
+        return self.width * self.length
 
+    @staticmethod
+    def validate(obj: 'Court') -> None:
+        current_year = date.today().year
+        if obj.year_built < 0 or obj.year_built > current_year:
+            obj.year_built = current_year
 
-zmienna1 = Court('lotnicza', 2009, 190, 200)
-zmienna2 = Court('apparel', 2014, 70, 115)
+    def __repr__(self) -> str:
+        return f'Boisko wybudowane w roku {self.year_built}, ' \
+               f'o długości {self.length} i szerokości {self.width}\n' \
+               f'Pole powierzchni: {self.area()} mkw.\n' \
+               f'Adres: {self.address}\n'
 
-print(zmienna1)
+    def __eq__(self, other: 'Court') -> bool:
+        if self.area() == other.area():
+            return True
+        return False
+
+    def __ne__(self, other: 'Court') -> bool:
+        if self.area() != other.area():
+            return True
+        return False

@@ -18,7 +18,7 @@ def main():
     Court.validate(court_1)
     print(court_1)
     # testy Stadium
-
+    print('-------------------------------------')
     stadium_1 = Stadium(
         "Słoneczna 10, 11-100 Olsztyn", 1999, "Słoneczny stadion", "Słoneczko", 1000
     )
