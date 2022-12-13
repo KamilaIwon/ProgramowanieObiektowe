@@ -34,7 +34,7 @@
     "last_opened_file_path": "D:/studia/semestr III/Programowanie Obiektowe/ćwiczenia/repo/164933_ProgramowanieObiektowe/lab9"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.zadanie2">
+  <component name="RunManager" selected="Application.zadanie3">
     <configuration name="zadanie1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="zadanie1" />
       <module name="java" />
@@ -49,8 +49,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="zadanie3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="zadanie3" />
+      <module name="java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.zadanie3" />
         <item itemvalue="Application.zadanie2" />
         <item itemvalue="Application.zadanie1" />
       </list>
@@ -65,7 +73,7 @@
       <option name="presentableId" value="Default" />
       <updated>1670960524499</updated>
       <workItem from="1670960532528" duration="723000" />
-      <workItem from="1670961515076" duration="3785000" />
+      <workItem from="1670961515076" duration="4133000" />
     </task>
     <servers />
   </component>

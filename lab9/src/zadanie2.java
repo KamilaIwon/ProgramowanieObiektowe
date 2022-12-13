@@ -1,6 +1,6 @@
 import java.util.Random;
 import java.util.Scanner;
-
+// zrobic poprawki
 public class zadanie2 {
     public static void main(String[] args)
     {
