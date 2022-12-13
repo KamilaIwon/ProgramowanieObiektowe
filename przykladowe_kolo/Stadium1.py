@@ -7,10 +7,10 @@ class Stadium(Court):
     __common_name: Optional[str]
     __capacity: int
 
-    def __init__(self, address: str, year_built: int, name: str,
-                 common_name: Optional[str], capacity: int = 0,
-                 width: float = 68.0, length: float = 150.0) -> None:
-        super(Stadium, self).__init__(address, year_built, width, length)
+    def __init__(self, width: float = 68, length: float = 150, address: str = '',
+                 year_built: int = 0, name: str = '', common_name: Optional[str] = '',
+                 capacity: int = 0) -> None:
+        super().__init__(width, length, address, year_built)
         self.__name = name
         self.__common_name = common_name
         if capacity >= 0:
@@ -58,7 +58,7 @@ class Stadium(Court):
                f"Pole powierzchni: {self.area()} mkw.\n" \
                f"Adres: {self.address}.\n" \
                f"Nazwa: {self.name}.\n"
-        if self.common_name is not None:
+        if self.common_name is not None and self.common_name != '':
             text += f"Nazwa zwyczajowa: {self.common_name}.\n"
         text += f"Pojemność stadionu {self.capacity}.\n"
         return text

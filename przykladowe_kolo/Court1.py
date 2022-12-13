@@ -7,7 +7,7 @@ class Court:
     __address: str
     __year_built: int
 
-    def __init__(self, address: str, year_built: int, width: float = 68, length: float = 150) -> None:
+    def __init__(self, width: float = 68, length: float = 150, address: str = '', year_built: int = 0) -> None:
         if year_built < 2008:
             if 45 <= width <= 90 and 90 <= length <= 120:
                 self.__width = width
