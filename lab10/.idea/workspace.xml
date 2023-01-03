@@ -103,7 +103,7 @@
       <updated>1671470522210</updated>
       <workItem from="1671470523579" duration="1659000" />
       <workItem from="1671535255560" duration="23518000" />
-      <workItem from="1672765226967" duration="9990000" />
+      <workItem from="1672765226967" duration="11107000" />
     </task>
     <servers />
   </component>
@@ -126,7 +126,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/lab11/tablice.java</url>
-          <line>90</line>
+          <line>105</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
