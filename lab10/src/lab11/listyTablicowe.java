@@ -3,7 +3,7 @@ package lab11;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class tablice {
+public class listyTablicowe {
     public static ArrayList<Integer> append(ArrayList<Integer> a, ArrayList<Integer> b) {
         ArrayList<Integer> result = new ArrayList<>(a);
         result.addAll(b);
@@ -100,10 +100,30 @@ public class tablice {
         }
         return tab;
     }
+
+    public static ArrayList<Integer> reversed(ArrayList<Integer> a){
+        ArrayList<Integer> tab = new ArrayList<>();
+        for(int i = a.size() - 1; i >= 0; --i){
+            tab.add(a.get(i));
+        }
+        return tab;
+    }
+
+    public static void reverse (ArrayList<Integer> a){
+        for(int i = 0; i < a.size()/2; ++i){
+            int tmp = a.get(i);
+            a.set(i,a.get(a.size()-i-1));
+            a.set(a.size()-i-1, tmp);
+        }
+    }
     public static void main(String[] args) {
-        ArrayList<Integer> a = new ArrayList<>(Arrays.asList(1, 4, 9, 16));
+        ArrayList<Integer> a = new ArrayList<>(Arrays.asList(1, 4, 9, 16, 5));
         ArrayList<Integer> b = new ArrayList<>(Arrays.asList(9, 7, 4, 9, 11));
         ArrayList<Integer> c = mergeSorted(a, b);
-        System.out.println(c); // should print [1, 4, 9, 16, 9, 7, 4, 9, 11]
+        ArrayList<Integer> d = reversed(a);
+        System.out.println(c);
+        System.out.println(d);
+        reverse(d);
+        System.out.println(d);
     }
 }
