@@ -1,12 +1,9 @@
 package lab11;
 
-import java.util.Date;
-import java.util.GregorianCalendar;
+import java.time.LocalDate;
 
-public class EmployeeDemo1
-{
-    public static void main(String[] args)
-    {
+public class EmployeeDemo1 {
+    public static void main(String[] args) {
         Employee[] personel = new Employee[3];
 
         // wypełnij tablicę danymi pracowników
@@ -29,72 +26,61 @@ public class EmployeeDemo1
 
         // Dodane w stosunku do poprzedniej wersji
         int n = Employee.getNextId(); // wywołanie metody statycznej
-        System.out.println("Następny dostępny id = " + n);
-
+        System.out.println("Nastepny dostepny id = " + n);
     }
 }
 
-class Employee
-{
-    public Employee(String name, double salary, int year, int month, int day)
-    {
+class Employee {
+    public Employee(String name, double salary, int year, int month, int day) {
         this.name = name;
         this.salary = salary;
 
-        GregorianCalendar calendar = new GregorianCalendar(year, month - 1, day);
-        hireDay = calendar.getTime();
+        LocalDate hireDate = LocalDate.of(year, month, day);
+        hireDay = hireDate;
 
         // Dodane w stosunku do poprzedniej wersji
         id = nextId;
         ++nextId;
     }
 
-    public String getName()
-    {
+    public String getName() {
         return name;
     }
 
-    public double getSalary()
-    {
+    public double getSalary() {
         return salary;
     }
 
-    public Date getHireDay()
-    {
-        return (Date) hireDay.clone();
+    public LocalDate getHireDay() {
+        return hireDay;
     }
 
-    public void raiseSalary(double procent)
-    {
-        double raise = salary * procent / 100;
+    public void raiseSalary(double percent) {
+        double raise = salary * percent / 100;
         salary += raise;
     }
 
     // Dodane w stosunku do poprzedniej wersji
-    public int getId()
-    {
+    public int getId() {
         return id;
     }
 
     // Dodane w stosunku do poprzedniej wersji
-    public void setId()
-    {
+    public void setId() {
         id = nextId;
         ++nextId;
     }
 
     // Dodane w stosunku do poprzedniej wersji
-    public static int getNextId()
-    {
+    public static int getNextId() {
         return nextId;
     }
 
     private String name;
     private double salary;
-    private Date hireDay;
+    private LocalDate hireDay;
 
     // Dodane w stosunku do poprzedniej wersji
     private int id;
     private static int nextId = 1;
 }
-

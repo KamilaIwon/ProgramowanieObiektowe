@@ -41,16 +41,9 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.EmployeeDemo1">
-    <configuration name="EmployeeDemo1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="EmployeeDemo1" />
-      <module name="lab10" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="klasy (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="lab11.klasy" />
+  <component name="RunManager" selected="Application.lab11.EmployeeDemo1 (4)">
+    <configuration name="lab11.EmployeeDemo1 (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="lab11.EmployeeDemo1" />
       <module name="lab10" />
       <extension name="coverage">
         <pattern>
@@ -62,8 +55,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="klasy" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="lab11.klasy" />
+    <configuration name="lab11.EmployeeDemo1 (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="lab11.EmployeeDemo1" />
       <module name="lab10" />
       <extension name="coverage">
         <pattern>
@@ -75,8 +68,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="klasy2 (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="lab11.klasy2" />
+    <configuration name="lab11.EmployeeDemo1 (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="lab11.EmployeeDemo1" />
       <module name="lab10" />
       <extension name="coverage">
         <pattern>
@@ -88,8 +81,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="klasy2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="lab11.klasy2" />
+    <configuration name="lab11.EmployeeDemo1 (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="lab11.EmployeeDemo1" />
+      <module name="lab10" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="lab11.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="lab11.EmployeeDemo1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="lab11.EmployeeDemo1" />
       <module name="lab10" />
       <extension name="coverage">
         <pattern>
@@ -103,11 +109,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.EmployeeDemo1" />
-        <item itemvalue="Application.klasy2 (1)" />
-        <item itemvalue="Application.klasy2" />
-        <item itemvalue="Application.klasy (1)" />
-        <item itemvalue="Application.klasy" />
+        <item itemvalue="Application.lab11.EmployeeDemo1 (4)" />
+        <item itemvalue="Application.lab11.EmployeeDemo1 (3)" />
+        <item itemvalue="Application.lab11.EmployeeDemo1 (2)" />
+        <item itemvalue="Application.lab11.EmployeeDemo1" />
+        <item itemvalue="Application.lab11.EmployeeDemo1 (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -121,7 +127,7 @@
       <updated>1671470522210</updated>
       <workItem from="1671470523579" duration="1659000" />
       <workItem from="1671535255560" duration="23518000" />
-      <workItem from="1672765226967" duration="16973000" />
+      <workItem from="1672765226967" duration="18221000" />
     </task>
     <servers />
   </component>
