@@ -41,20 +41,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.lab11.EmployeeDemo1 (4)">
-    <configuration name="lab11.EmployeeDemo1 (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="lab11.EmployeeDemo1" />
-      <module name="lab10" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="lab11.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.mainn">
     <configuration name="lab11.EmployeeDemo1 (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="lab11.EmployeeDemo1" />
       <module name="lab10" />
@@ -107,13 +94,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="mainn" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="probne_kolokwium.mainn" />
+      <module name="lab10" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="probne_kolokwium.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.mainn" />
         <item itemvalue="Application.lab11.EmployeeDemo1 (4)" />
         <item itemvalue="Application.lab11.EmployeeDemo1 (3)" />
         <item itemvalue="Application.lab11.EmployeeDemo1 (2)" />
         <item itemvalue="Application.lab11.EmployeeDemo1" />
-        <item itemvalue="Application.lab11.EmployeeDemo1 (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -128,6 +128,7 @@
       <workItem from="1671470523579" duration="1659000" />
       <workItem from="1671535255560" duration="23518000" />
       <workItem from="1672765226967" duration="18221000" />
+      <workItem from="1673823031934" duration="1528000" />
     </task>
     <servers />
   </component>
