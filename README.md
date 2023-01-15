@@ -1,5 +1,2 @@
-# ProgramowanieObiektowe
-
-# zadania: https://tinyurl.com/yhv6fhec
-# regulamin: https://tinyurl.com/34879ys4
-# zadania lab8: https://tinyurl.com/ynsawstr
+# object-oriented-programming
+ PO 2022-23
