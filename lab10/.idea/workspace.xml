@@ -41,7 +41,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+<<<<<<< HEAD
   <component name="RunManager" selected="Application.testy">
+=======
+  <component name="RunManager" selected="Application.mainn">
+>>>>>>> 49752bba4de0e2f16e7afc70e0c09a5d531608c8
     <configuration name="lab11.EmployeeDemo1 (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="lab11.EmployeeDemo1" />
       <module name="lab10" />
@@ -94,12 +98,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
     <configuration name="testy" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="lab11.testy" />
       <module name="lab10" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="lab11.*" />
+=======
+    <configuration name="mainn" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="probne_kolokwium.mainn" />
+      <module name="lab10" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="probne_kolokwium.*" />
+>>>>>>> 49752bba4de0e2f16e7afc70e0c09a5d531608c8
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -109,7 +122,11 @@
     </configuration>
     <recent_temporary>
       <list>
+<<<<<<< HEAD
         <item itemvalue="Application.testy" />
+=======
+        <item itemvalue="Application.mainn" />
+>>>>>>> 49752bba4de0e2f16e7afc70e0c09a5d531608c8
         <item itemvalue="Application.lab11.EmployeeDemo1 (4)" />
         <item itemvalue="Application.lab11.EmployeeDemo1 (3)" />
         <item itemvalue="Application.lab11.EmployeeDemo1 (2)" />
@@ -127,11 +144,16 @@
       <updated>1671470522210</updated>
       <workItem from="1671470523579" duration="1659000" />
       <workItem from="1671535255560" duration="23518000" />
+<<<<<<< HEAD
       <workItem from="1672765226967" duration="18447000" />
       <workItem from="1673363261591" duration="254000" />
       <workItem from="1673656567381" duration="430000" />
       <workItem from="1673724364055" duration="423000" />
       <workItem from="1674424376504" duration="3012000" />
+=======
+      <workItem from="1672765226967" duration="18221000" />
+      <workItem from="1673823031934" duration="1528000" />
+>>>>>>> 49752bba4de0e2f16e7afc70e0c09a5d531608c8
     </task>
     <servers />
   </component>
